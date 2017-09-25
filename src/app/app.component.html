@@ -2,4 +2,7 @@
   <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
   <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
 </nav>
-<router-outlet></router-outlet>
+
+<div class="router-container" [@routeAnimation]="prepRouteState(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
