@@ -1,6 +1,13 @@
-<nav class="nav nav-inline fixed-top">
-  <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-  <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+<nav class="nav-container bg-dark pt-lg-5">
+  <ul class="nav">
+    <li class="nav-item col-6 col-lg-12">
+      <a class="nav-link text-center" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">Home</a>
+    </li>
+    <li class="nav-item col-6 col-lg-12">
+      <a class="nav-link text-center" routerLink="/about" routerLinkActive="active">About</a>
+    </li>
+  </ul>
 </nav>
 
 <div class="router-container" [@routeAnimation]="prepRouteState(routerOutlet)">

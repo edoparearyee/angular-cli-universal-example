@@ -1,0 +1,34 @@
+//
+// Variables
+// --------------------------------------------------
+
+// Color system
+//
+//
+
+$theme-colors: (
+  primary: $orange,
+  secondary: $gray-600,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800
+);
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:            theme-color("primary");
+$link-hover-color:      darken($link-color, 15%);
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:               $gray-200;
+$body-color:            $gray-900;

@@ -1,4 +1,11 @@
-.nav-link.active {
-  background-color: transparent;
-  color: $nav-tabs-link-active-color;
+//
+// Nav
+// --------------------------------------------------
+
+.nav-link {
+  color: $white;
+
+  &.active {
+    color: $orange;
+  }
 }

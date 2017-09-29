@@ -10,7 +10,9 @@ import { routeAnimation } from './shared/router-animation';
   animations: [routeAnimation]
 })
 export class AppComponent {
+
   public prepRouteState(outlet: RouterOutlet): string {
-    return outlet.activatedRouteData['animation'] || 'homePage';
+    return outlet.activatedRouteData['animation'] || '';
   }
+
 }

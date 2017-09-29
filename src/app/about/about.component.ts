@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Todo } from '../shared/todo.model';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  public todos: Todo[];
 
-  ngOnInit() {
+  constructor(private route: ActivatedRoute) { }
+
+  public ngOnInit(): void {
+    this.route.data
+      .subscribe((data: {todos: Todo[]}) => this.todos = data.todos);
   }
-
 }
