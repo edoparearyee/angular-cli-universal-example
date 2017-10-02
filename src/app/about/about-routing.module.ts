@@ -5,7 +5,12 @@ import { TodoResolver } from './about-resolve.service';
 import { AboutComponent } from './about.component';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent, data: { animation: 'aboutPage' }, resolve: { todos: TodoResolver } }
+  {
+    path: '',
+    component: AboutComponent,
+    data: { animation: 'aboutPage' },
+    resolve: { todos: TodoResolver }
+  }
 ];
 
 @NgModule({
