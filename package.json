@@ -29,6 +29,7 @@
     "@angular/router": "^4.0.0",
     "@nguniversal/express-engine": "^1.0.0-beta.3",
     "@nguniversal/module-map-ngfactory-loader": "^1.0.0-beta.3",
+    "@ngx-universal/state-transfer": "^4.0.1",
     "bootstrap": "^4.0.0-beta",
     "core-js": "^2.4.1",
     "express": "^4.16.0",

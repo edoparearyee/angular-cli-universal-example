@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpTransferModule } from '@ngx-universal/state-transfer';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({appId: 'cli-universal'}),
-    BrowserAnimationsModule,
-    HttpClientModule,
+    HttpModule,
+    HttpTransferModule.forRoot(),
     AppRoutingModule
   ],
   declarations: [
     AppComponent
   ],
-  bootstrap: [AppComponent]
+  exports: [
+    AppComponent,
+    HttpModule
+  ]
 })
 export class AppModule { }

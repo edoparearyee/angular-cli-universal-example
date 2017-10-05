@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { HttpTransferService } from '@ngx-universal/state-transfer';
 
 import { Todo } from '../shared/todo.model';
 
@@ -10,9 +10,9 @@ export class TodoResolver implements Resolve<Todo> {
 
   public apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpTransferService) { }
 
   public resolve(): Observable<Todo> {
-    return this.http.get<Todo>(this.apiUrl);
+    return this.http.get(this.apiUrl);
   }
 }
