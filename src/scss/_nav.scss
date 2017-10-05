@@ -2,10 +2,20 @@
 // Nav
 // --------------------------------------------------
 
+.nav {
+  flex-direction: row;
+}
+
 .nav-link {
   color: $white;
 
   &.active {
     color: $orange;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .nav {
+    flex-direction: column;
   }
 }

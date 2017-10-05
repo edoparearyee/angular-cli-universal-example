@@ -8,7 +8,7 @@ import { Todo } from '../shared/todo.model';
 @Injectable()
 export class TodoResolver implements Resolve<Todo> {
 
-  public apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+  private apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
   constructor(private http: HttpTransferService) { }
 

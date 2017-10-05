@@ -10,12 +10,13 @@ import { Todo } from '../shared/todo.model';
 })
 export class AboutComponent implements OnInit {
 
-  public todos: Todo[];
+  public todos: Todo[] = [];
 
   constructor(private route: ActivatedRoute) { }
 
   public ngOnInit(): void {
     this.route.data
-      .subscribe((data: {todos: Todo[]}) => this.todos = data.todos);
+      .map((data: {todos: Todo[]}) => data.todos.slice(0, 5))
+      .subscribe((todos) => todos.forEach(todo => this.todos.push(todo)));
   }
 }

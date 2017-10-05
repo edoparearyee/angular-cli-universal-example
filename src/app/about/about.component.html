@@ -1,11 +1,11 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="pt-md-5 pb-md-5">
 
-  <div class="container-fluid p-5">
+  <div class="container-fluid pt-3 pb-3 pl-md-5 pr-md-5 pb-md-5 pt-md-0">
     <div class="row">
       <div class="col-12 col-md-10 col-lg-8">
 
-        <h1 class="display-2 text-primary">About page</h1>
-        <p class="lead">Nostrud Lorem tempor esse nostrud reprehenderit non in anim qui. Ad velit qui ullamco mollit sint aliqua in laboris incididunt. Sit duis aliqua ea labore adipisicing aute.</p>
+        <h1 class="display-4 text-primary router-animate-child mb-3">About page</h1>
+        <p class="lead router-animate-child">Nostrud Lorem tempor esse nostrud reprehenderit non in anim qui. Ad velit qui ullamco mollit sint aliqua in laboris incididunt. Sit duis aliqua ea labore adipisicing aute.</p>
 
       </div>
     </div>
@@ -13,18 +13,20 @@
 
 </div>
 
-<div class="container-fluid pb-5 pl-5 pr-5">
+<div class="container-fluid pb-5 pl-md-5 pr-md-5">
   <div class="row">
     <div class="col-12">
 
-      <ul class="list-group" *ngIf="todos?.length; else noItems">
-        <li class="list-group-item" *ngFor="let item of todos | slice: 0:20">
+      <ul class="list-group" *ngIf="todos.length">
+        <li
+          class="list-group-item list-group-item-dark router-animate-child"
+          *ngFor="let item of todos">
           {{ item.title }}
         </li>
       </ul>
 
       <ng-template #noItems>
-        <p class="display-4">No items to display</p>
+        <p class="lead">No items to display</p>
       </ng-template>
 
     </div>

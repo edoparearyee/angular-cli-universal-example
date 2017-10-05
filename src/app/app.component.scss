@@ -2,21 +2,50 @@
 
 :host {
   display: flex;
+  flex-direction: column;
   justify-content: stretch;
   min-height: 100vh;
 }
 
 .nav-container {
-  flex: 1 1 7.5rem;
+  align-items: center;
+  border-bottom: 1px solid theme-color("primary");
+  display: flex;
+  flex: 1 1 5rem; // 1 1 ~80px
+  justify-content: flex-end;
   position: relative;
   z-index: $zindex-fixed;
 }
 
 .router-container {
-  flex: 2 1 calc(100vw - 7.5rem);
+  flex: 2 1 calc(100vh - 5rem); // 2 1 ~calc(100vh - 80px)
   position: relative;
 
-  & > ::ng-deep * {
+  & > ::ng-deep :not(router-outlet) {
     display: block;
+    min-height: calc(100vh - 5rem);
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  :host {
+    flex-direction: row;
+  }
+
+  .router-container {
+    flex: 2 1 calc(100vw - 7.5rem); // 2 1 ~calc(100vh - 120px)
+
+    & > ::ng-deep :not(router-outlet) {
+      display: block;
+      min-height: 100vh;
+    }
+  }
+
+  .nav-container {
+    align-items: flex-start;
+    border-bottom: none;
+    border-right: 1px solid theme-color("primary");
+    flex: 1 1 7.5rem; // 1 1 ~120px
+    justify-content: center;
   }
 }
