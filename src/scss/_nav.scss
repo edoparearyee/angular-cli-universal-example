@@ -4,6 +4,7 @@
 
 .nav {
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -17,5 +18,6 @@
 @include media-breakpoint-up(sm) {
   .nav {
     flex-direction: column;
+    flex-wrap: wrap;
   }
 }

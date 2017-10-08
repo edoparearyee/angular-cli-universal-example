@@ -27,7 +27,11 @@
   }
 }
 
-@include media-breakpoint-up(sm) {
+.img-logo {
+  width: 25%;
+}
+
+@include media-breakpoint-up(md) {
   :host {
     flex-direction: row;
   }
@@ -42,10 +46,15 @@
   }
 
   .nav-container {
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column;
     border-bottom: none;
     border-right: 1px solid theme-color("primary");
     flex: 1 1 7.5rem; // 1 1 ~120px
-    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  .img-logo {
+    width: 75%;
   }
 }
