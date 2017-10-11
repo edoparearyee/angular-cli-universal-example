@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
 
   <title>CLI Universal</title>
+
 
   <!-- https://realfavicongenerator.net/ -->
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-touch-icon-57x57.png">
@@ -25,11 +29,23 @@
   <meta name="msapplication-TileColor" content="#868e96">
   <meta name="msapplication-TileImage" content="/assets/icons/mstile-144x144.png">
   <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#fd7e14">
 
   <base href="/">
 </head>
 <body>
   <app-root></app-root>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered');
+        })
+        .catch(function(err) {
+          console.log('Service Worker registration failed: ', err);
+        });
+    }
+  </script>
 </body>
 </html>

@@ -6,11 +6,12 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist/browser",
+      "outDir": "dist/client",
       "assets": [
         "assets",
         "favicon.ico",
-        "manifest.json"
+        "manifest.json",
+        "service-worker.js"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -23,6 +24,7 @@
         "scss/main.scss"
       ],
       "scripts": [],
+      "serviceWorker": true,
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -36,7 +38,8 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "manifest.json"
+        "manifest.json",
+        "service-worker.js"
       ],
       "index": "index.html",
       "main": "main.server.ts",
@@ -48,6 +51,7 @@
         "scss/main.scss"
       ],
       "scripts": [],
+      "serviceWorker": true,
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

@@ -1,7 +1,7 @@
 {
   "name": "CLI Universal",
   "short_name": "CLI Universal",
-  "start_url": "http://localhost:3000",
+  "start_url": "/",
   "theme_color": "#fd7e14",
   "background_color": "#868e96",
   "orientation": "portrait",
