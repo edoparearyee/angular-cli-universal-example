@@ -21,7 +21,7 @@ const port = process.env.PORT || 3000;
 const distFolder = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
-const template = readFileSync(join(distFolder, 'browser', 'index.html')).toString();
+const template = readFileSync(join(distFolder, 'client', 'index.html')).toString();
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
@@ -32,10 +32,10 @@ app.engine('html', ngExpressEngine({
 }));
 
 app.set('view engine', 'html');
-app.set('views', join(distFolder, 'browser'));
+app.set('views', join(distFolder, 'client'));
 
 // Server static files from /browser
-app.get('*.*', express.static(join(distFolder, 'browser'), {
+app.get('*.*', express.static(join(distFolder, 'client'), {
   maxAge: '1y'
 }));
 

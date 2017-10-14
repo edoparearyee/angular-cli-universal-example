@@ -28,4 +28,4 @@ renderModuleFactory(AppServerModuleNgFactory, {
     provideModuleMap(LAZY_MODULE_MAP)
   ]
 })
-.then(html => writeFileSync(join('browser', 'index.html'), html));
+.then(html => writeFileSync(join('client', 'index.html'), html));
