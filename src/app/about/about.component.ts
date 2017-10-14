@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
-import { Todo } from '../shared/todo.model';
+import { Post } from '../shared/post.model';
 
 @Component({
   selector: 'app-about',
@@ -10,13 +11,12 @@ import { Todo } from '../shared/todo.model';
 })
 export class AboutComponent implements OnInit {
 
-  public todos: Todo[] = [];
+  public posts$: Observable<Post[]>;
 
   constructor(private route: ActivatedRoute) { }
 
   public ngOnInit(): void {
-    this.route.data
-      .map((data: {todos: Todo[]}) => data.todos.slice(0, 5))
-      .subscribe((todos) => todos.forEach(todo => this.todos.push(todo)));
+    this.posts$ = this.route.data
+      .map((data: {posts: Post[]}) => data.posts);
   }
 }

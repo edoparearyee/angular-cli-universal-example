@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TodoResolver } from './about-resolve.service';
+import { PostResolver } from './about-resolve.service';
 import { AboutComponent } from './about.component';
 
 const routes: Routes = [
@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: AboutComponent,
     data: { animation: 'aboutPage' },
-    resolve: { todos: TodoResolver }
+    resolve: { posts: PostResolver }
   }
 ];
 
@@ -20,4 +20,4 @@ const routes: Routes = [
 export class AboutRoutingModule { }
 
 export const routedComponents = [AboutComponent];
-export const resolveProviders = [TodoResolver];
+export const resolveProviders = [PostResolver];

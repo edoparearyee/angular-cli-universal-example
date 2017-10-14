@@ -1,18 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { HttpTransferService } from '@ngx-universal/state-transfer';
 
-import { Todo } from '../shared/todo.model';
+import { environment } from '../../environments/environment';
+import { Post } from '../shared/post.model';
 
 @Injectable()
-export class TodoResolver implements Resolve<Todo> {
-
-  private apiUrl = '/assets/data/todos.json';
+export class PostResolver implements Resolve<Post[]> {
 
   constructor(private http: HttpTransferService) { }
 
-  public resolve(): Observable<Todo> {
-    return this.http.get(this.apiUrl);
+  public resolve(): Observable<Post[]> {
+    return this.http.get(environment.apiUrl);
   }
 }

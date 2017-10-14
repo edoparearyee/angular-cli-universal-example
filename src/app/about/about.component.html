@@ -1,34 +1,37 @@
-<div class="pt-md-5 pb-md-5">
+<div class="pl-2 pr-2 pl-md-5 pr-md-5">
 
-  <div class="container-fluid pt-3 pb-3 pl-md-5 pr-md-5 pb-md-5 pt-md-0">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-12 col-md-10 col-lg-8">
+      <div class="col-12 col-md-10 col-lg-8 pt-5 pb-5">
 
         <h1 class="display-4 text-primary router-animate-child mb-3">About page</h1>
-        <p class="lead router-animate-child">Nostrud Lorem tempor esse nostrud reprehenderit non in anim qui. Ad velit qui ullamco mollit sint aliqua in laboris incididunt. Sit duis aliqua ea labore adipisicing aute.</p>
+        <p class="lead router-animate-child mb-0">Nostrud Lorem tempor esse nostrud reprehenderit non in anim qui. Ad velit qui ullamco mollit sint aliqua in laboris incididunt. Sit duis aliqua ea labore adipisicing aute.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pl-2 pr-2 pl-md-5 pr-md-5">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-lg-10">
+
+        <ul *ngIf="(posts$ | async)?.length; else noItems" class="list-group pb-5">
+          <li
+            class="list-group-item list-group-item-dark router-animate-child"
+            *ngFor="let item of posts$ | async">
+            {{ item.title }}
+          </li>
+        </ul>
+
+        <ng-template #noItems>
+          <p class="lead">No items to display</p>
+        </ng-template>
 
       </div>
     </div>
   </div>
 
-</div>
-
-<div class="container-fluid pb-5 pl-md-5 pr-md-5">
-  <div class="row">
-    <div class="col-12">
-
-      <ul class="list-group" *ngIf="todos.length">
-        <li
-          class="list-group-item list-group-item-dark router-animate-child"
-          *ngFor="let item of todos">
-          {{ item.title }}
-        </li>
-      </ul>
-
-      <ng-template #noItems>
-        <p class="lead">No items to display</p>
-      </ng-template>
-
-    </div>
-  </div>
 </div>
