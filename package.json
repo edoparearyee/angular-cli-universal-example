@@ -5,14 +5,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prestart:server": "npm run build",
+    "prestart:server": "npm run build:server && npm run sw-precache -- --root=dist/client",
     "start:server": "node dist/server",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "ng build --prod && npm run sw-precache",
-    "build:server": "ng build --prod --app 1 --output-hashing=false && webpack --config webpack.server.js --progress --colors",
-    "prebuild:static": "npm run build",
+    "build": "npm run build:client && npm run build:server && npm run build:static && npm run sw-precache && npm run sw-precache -- --root=dist/server",
+    "build:client": "ng build --prod",
+    "build:server": "ng build --prod --app=1 --output-hashing=false && npm run webpack:server",
+    "prebuild:static": "npm run build:server",
     "build:static": "cd dist && node prerender",
-    "sw-precache": "sw-precache --root=dist/client --config=precache-config.js",
+    "webpack:server": "webpack --config=webpack.server.js --progress --colors",
+    "sw-precache": "sw-precache --config=precache-config.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -38,6 +39,7 @@
     "core-js": "^2.4.1",
     "express": "^4.16.0",
     "rxjs": "^5.4.2",
+    "yargs": "^9.0.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

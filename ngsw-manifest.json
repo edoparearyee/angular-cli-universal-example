@@ -1,0 +1,20 @@
+{
+  "dynamic": {
+    "group": [
+      {
+        "name": "post api",
+        "urls": {
+          "https://jsonplaceholder.typicode.com": {
+            "match": "prefix"
+          }
+        },
+        "cache": {
+          "optimizeFor": "performance",
+          "maxAgeMs": 3600000,
+          "maxEntries": 20,
+          "strategy": "lru"
+        }
+      }
+    ]
+  }
+}
