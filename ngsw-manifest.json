@@ -1,15 +1,4 @@
 {
-  "routing": {
-    "index": "/index.html",
-    "routes": {
-      "/": {
-        "prefix": false
-      },
-      "/about": {
-        "prefix": false
-      }
-    }
-  },
   "dynamic": {
     "group": [
       {

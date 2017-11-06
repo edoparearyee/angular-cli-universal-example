@@ -5,10 +5,8 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { chdir } from 'process';
 
-// Express Engine
-import { ngExpressEngine } from '@nguniversal/express-engine';
 // Import module map for lazy loading
-import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
+const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader');
 
 import { renderModuleFactory } from '@angular/platform-server';
 
@@ -21,7 +19,7 @@ const paths = require('./routes');
 const clientFolder = join(process.cwd(), 'client');
 
 // Load the index.html file containing referances to your application bundle.
-const index = readFileSync(join('client', 'index.html'), 'utf8');
+const template = readFileSync(join('client', 'index.html'), 'utf8');
 
 // Iterate each route path
 paths.forEach((route) => {
@@ -34,8 +32,10 @@ paths.forEach((route) => {
 
   // Writes rendered HTML to index.html, replacing the file if it already exists.
   renderModuleFactory(AppServerModuleNgFactory, {
-    document: index,
+    // Our index.html
+    document: template,
     url: route,
+    // DI so that we can get lazy-loading to work differently (since we need it to just instantly render it)
     extraProviders: [
       provideModuleMap(LAZY_MODULE_MAP)
     ]
