@@ -38,8 +38,7 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "manifest.json",
-        "service-worker.js"
+        "manifest.json"
       ],
       "index": "index.html",
       "main": "main.server.ts",
