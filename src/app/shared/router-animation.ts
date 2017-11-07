@@ -18,8 +18,8 @@ export const routeAnimation = trigger('routeAnimation', [
       ], {optional: true})
     ]),
 
-    query(':leave .router-animate-child', stagger('100ms', [
-      animate('350ms ease-out', style({transform: 'translateY(75px)', opacity: 0}))
+    query(':leave .router-animate-child', stagger(-50, [
+      animate('350ms cubic-bezier(0.39, 0.575, 0.565, 1)', style({transform: 'translateY(75px)', opacity: 0}))
     ]), {optional: true}),
 
     style({height: '!'}),
@@ -27,18 +27,18 @@ export const routeAnimation = trigger('routeAnimation', [
     group([
       query(':leave', [
         style({transform: 'translateX(0)'}),
-        animate('1s ease-out', style({transform: 'translateX(-100%)'})),
+        animate('750ms cubic-bezier(0.39, 0.575, 0.565, 1)', style({transform: 'translateX(-100%)'})),
         style({ display: 'none' })
       ], {optional: true}),
 
       query(':enter', [
-        animate('1s ease-out', style({transform: 'translateX(0)'}))
+        animate('750ms cubic-bezier(0.39, 0.575, 0.565, 1)', style({transform: 'translateX(0)'}))
       ], {optional: true}),
 
     ]),
 
-    query(':enter .router-animate-child', stagger(200, [
-      animate('500ms ease-out', style({transform: 'translateY(0)', opacity: 1}))
+    query(':enter .router-animate-child', stagger(50, [
+      animate('350ms cubic-bezier(0.39, 0.575, 0.565, 1)', style({transform: 'translateY(0)', opacity: 1}))
     ]), {optional: true})
 
   ]),
@@ -57,8 +57,8 @@ export const routeAnimation = trigger('routeAnimation', [
       ], {optional: true})
     ]),
 
-    query(':leave .router-animate-child', stagger('100ms', [
-      animate('350ms ease-out', style({transform: 'translateY(75px)', opacity: 0}))
+    query(':leave .router-animate-child', stagger(-50, [
+      animate('350ms cubic-bezier(0.39, 0.575, 0.565, 1)', style({transform: 'translateY(75px)', opacity: 0}))
     ]), {optional: true}),
 
     style({height: '!'}),
@@ -66,18 +66,18 @@ export const routeAnimation = trigger('routeAnimation', [
     group([
       query(':leave', [
         style({transform: 'translateX(0)'}),
-        animate('1s ease-out', style({transform: 'translateX(100%)'})),
+        animate('750ms cubic-bezier(0.39, 0.575, 0.565, 1)', style({transform: 'translateX(100%)'})),
         style({ display: 'none' })
       ], {optional: true}),
 
       query(':enter', [
-        animate('1s ease-out', style({transform: 'translateX(0)'}))
+        animate('750ms cubic-bezier(0.39, 0.575, 0.565, 1)', style({transform: 'translateX(0)'}))
       ], {optional: true}),
 
     ]),
 
-    query(':enter .router-animate-child', stagger(200, [
-      animate('500ms ease-out', style({transform: 'translateY(0)', opacity: 1}))
+    query(':enter .router-animate-child', stagger(50, [
+      animate('350ms cubic-bezier(0.39, 0.575, 0.565, 1)', style({transform: 'translateY(0)', opacity: 1}))
     ]), {optional: true})
 
   ])
