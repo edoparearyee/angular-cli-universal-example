@@ -1,8 +1,8 @@
-# Angular Cli Universal Example
+# Angular CLI Universal Example
 
-A simple example of angular server side rendering using [@angular/cli][@angular/cli], [@nguniversal/express-engine][@nguniversal/express-engine] and [@ngx-universal/state-transfer][@ngx-universal/state-transfer]
+A simple example of Angular server side rendering using [Angular CLI][@angular/cli], with pre-rendering to generate a static site, lazy loading routes and state transfer to prevent repeated request.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
+This project was generated with [Angular CLI](@angular/cli) version 1.4.3.
 
 ## Development server
 
@@ -11,7 +11,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Run server build
 
-Run `npm run build:server` to generate the server build. Or run `npm run start:server` to generate the server build and run the server app.
+Run `npm run build` to generate the client and server builds. Or run `npm run start:server` to generate the server build and run the server app.
+
+## Generate static site
+
+Run `npm run build` to generate the client and server builds. Then run `npm run build:static` to generate the static site pages based on the routes declared in the `./routes.js` file.
 
 ## Code scaffolding
 
@@ -34,5 +38,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 [@angular/cli]: https://github.com/angular/angular-cli
-[@nguniversal/express-engine]: https://github.com/angular/universal
-[@ngx-universal/state-transfer]: https://github.com/fulls1z3/ngx-universal
