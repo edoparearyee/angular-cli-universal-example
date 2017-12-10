@@ -11,11 +11,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Run server build
 
-Run `npm run build` to generate the client and server builds. Or run `npm run start:server` to generate the server build and run the server app.
+Run `npm run build:ssr` to generate the client and server bundles. Then run `npm run start:ssr` to start an express server that renders the app pages.
 
 ## Generate static site
 
-Run `npm run build` to generate the client and server builds. Then run `npm run build:static` to generate the static site pages based on the routes declared in the `./routes.js` file.
+Run `npm run build:prerender` to create the client and server bundles. And then to generate the static site pages based on the routes declared in the `./routes.js` file.
 
 ## Code scaffolding
 

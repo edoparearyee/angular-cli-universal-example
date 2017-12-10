@@ -16,15 +16,15 @@ const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/mai
 // Get route paths to prerender only static pages
 const paths = require('./routes');
 
-const clientFolder = join(process.cwd(), 'client');
+const browserFolder = join(process.cwd(), 'browser');
 
 // Load the index.html file containing referances to your application bundle.
-const template = readFileSync(join('client', 'index.html'), 'utf8');
+const template = readFileSync(join('browser', 'index.html'), 'utf8');
 
 // Iterate each route path
 paths.forEach((route) => {
-  // Changes current directory to ./dist/client
-  chdir(clientFolder);
+  // Changes current directory to ./dist/browser
+  chdir(browserFolder);
 
   // Creates new directories (if not exists) and changes current directory for the nested one
   route.split('/').filter(val => val !== '')
@@ -39,5 +39,5 @@ paths.forEach((route) => {
     extraProviders: [
       provideModuleMap(LAZY_MODULE_MAP)
     ]
-  }).then(html => writeFileSync(join(clientFolder, route, 'index.html'), html));
+  }).then(html => writeFileSync(join(browserFolder, route, 'index.html'), html));
 });

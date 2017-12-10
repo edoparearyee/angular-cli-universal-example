@@ -21,7 +21,7 @@ const port = process.env.PORT || 8080;
 const distFolder = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
-const template = readFileSync(join(distFolder, 'client', 'index.html')).toString();
+const template = readFileSync(join(distFolder, 'browser', 'index.html')).toString();
 
 app.engine('html', (_, options, callback) => {
   renderModuleFactory(AppServerModuleNgFactory, {
@@ -38,16 +38,16 @@ app.engine('html', (_, options, callback) => {
 });
 
 app.set('view engine', 'html');
-app.set('views', join(distFolder, 'client'));
+app.set('views', join(distFolder, 'browser'));
 
 // Server static files from /browser
-app.get('*.*', express.static(join(distFolder, 'client'), {
+app.get('*.*', express.static(join(distFolder, 'browser'), {
   maxAge: '1y'
 }));
 
 // ALl regular routes use the Universal engine
 app.get('*', (req, res) => {
-  res.render(join(distFolder, 'client', 'index.html'), { req });
+  res.render(join(distFolder, 'browser', 'index.html'), { req });
 });
 
 // Start up the Node server
